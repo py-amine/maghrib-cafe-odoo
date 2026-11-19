@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_maghrib_cafe_item_list" model="ir.ui.view">
+        <field name="name">maghrib.cafe.item.list</field>
+        <field name="model">maghrib.cafe.item</field>
+        <field name="arch" type="xml">
+            <list string="Articles du Menu" decoration-danger="not is_available">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="price_mad"/>
+                <field name="qty_available"/>
+                <field name="is_available" widget="boolean_toggle"/>
+                <button name="action_set_out_of_stock" string="Épuisé" type="object" class="btn-secondary"/>
+                <button name="action_restock_ten" string="+10 Stock" type="object" class="btn-primary"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_maghrib_cafe_item_form" model="ir.ui.view">
+        <field name="name">maghrib.cafe.item.form</field>
+        <field name="model">maghrib.cafe.item</field>
+        <field name="arch" type="xml">
+            <form string="Article du Menu">
+                <header>
+                    <button name="action_restock_ten" string="Réapprovisionner (+10)" type="object" class="btn-primary"/>
+                    <button name="action_set_out_of_stock" string="Marquer Épuisé" type="object" class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Épuisé" bg_color="text-bg-danger" invisible="is_available"/>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Ex: Khobz et eggs"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category_id"/>
+                            <field name="price_mad"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="qty_available"/>
+                            <field name="is_available" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" placeholder="soft eggs, tomato, olives, cumin..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_maghrib_cafe_category_list" model="ir.ui.view">
+        <field name="name">maghrib.cafe.category.list</field>
+        <field name="model">maghrib.cafe.category</field>
+        <field name="arch" type="xml">
+            <list string="Catégories" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="service_hours"/>
+                <field name="item_count"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_maghrib_cafe_items" model="ir.actions.act_window">
+        <field name="name">Menu et Stocks</field>
+        <field name="res_model">maghrib.cafe.item</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_maghrib_cafe_categories" model="ir.actions.act_window">
+        <field name="name">Catégories</field>
+        <field name="res_model">maghrib.cafe.category</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem id="menu_maghrib_cafe_root" name="MAGHRIB Café" web_icon="base,static/description/icon.png" sequence="10"/>
+    <menuitem id="menu_maghrib_cafe_items" name="Articles et Stocks" parent="menu_maghrib_cafe_root" action="action_maghrib_cafe_items" sequence="10"/>
+    <menuitem id="menu_maghrib_cafe_categories" name="Catégories" parent="menu_maghrib_cafe_root" action="action_maghrib_cafe_categories" sequence="20"/>
+</odoo>

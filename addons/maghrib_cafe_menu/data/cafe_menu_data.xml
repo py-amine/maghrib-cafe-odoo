@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Categories (01 to 06) -->
+    <record id="cat_breakfast" model="maghrib.cafe.category">
+        <field name="code">01</field>
+        <field name="name">Breakfast</field>
+        <field name="service_hours">DAILY 08:00-12:00</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="cat_coffee" model="maghrib.cafe.category">
+        <field name="code">02</field>
+        <field name="name">Coffee</field>
+        <field name="sequence">2</field>
+    </record>
+    <record id="cat_tea" model="maghrib.cafe.category">
+        <field name="code">03</field>
+        <field name="name">Tea</field>
+        <field name="sequence">3</field>
+    </record>
+    <record id="cat_matcha" model="maghrib.cafe.category">
+        <field name="code">04</field>
+        <field name="name">Matcha</field>
+        <field name="sequence">4</field>
+    </record>
+    <record id="cat_food" model="maghrib.cafe.category">
+        <field name="code">05</field>
+        <field name="name">Food</field>
+        <field name="service_hours">FROM 12:00</field>
+        <field name="sequence">5</field>
+    </record>
+    <record id="cat_pastries" model="maghrib.cafe.category">
+        <field name="code">06</field>
+        <field name="name">Pastries</field>
+        <field name="sequence">6</field>
+    </record>
+
+    <!-- 01. Breakfast -->
+    <record id="item_khobz_eggs" model="maghrib.cafe.item">
+        <field name="name">Khobz and eggs</field>
+        <field name="description">soft eggs, tomato, olives, cumin</field>
+        <field name="price_mad">48.0</field>
+        <field name="qty_available">20</field>
+        <field name="sequence">1</field>
+        <field name="category_id" ref="cat_breakfast"/>
+    </record>
+    <record id="item_amlou_pancakes" model="maghrib.cafe.item">
+        <field name="name">Amlou pancakes</field>
+        <field name="description">banana, toasted almonds</field>
+        <field name="price_mad">52.0</field>
+        <field name="qty_available">15</field>
+        <field name="sequence">2</field>
+        <field name="category_id" ref="cat_breakfast"/>
+    </record>
+    <record id="item_labneh_toast" model="maghrib.cafe.item">
+        <field name="name">Labneh toast</field>
+        <field name="description">cucumber, herbs, chilli oil</field>
+        <field name="price_mad">46.0</field>
+        <field name="qty_available">18</field>
+        <field name="sequence">3</field>
+        <field name="category_id" ref="cat_breakfast"/>
+    </record>
+    <record id="item_morning_brioche" model="maghrib.cafe.item">
+        <field name="name">Morning brioche</field>
+        <field name="description">egg, cheese, rocket</field>
+        <field name="price_mad">42.0</field>
+        <field name="qty_available">12</field>
+        <field name="sequence">4</field>
+        <field name="category_id" ref="cat_breakfast"/>
+    </record>
+
+    <!-- 02. Coffee -->
+    <record id="item_espresso" model="maghrib.cafe.item">
+        <field name="name">Espresso</field>
+        <field name="price_mad">18.0</field>
+        <field name="qty_available">50</field>
+        <field name="sequence">1</field>
+        <field name="category_id" ref="cat_coffee"/>
+    </record>
+    <record id="item_americano" model="maghrib.cafe.item">
+        <field name="name">Americano</field>
+        <field name="price_mad">24.0</field>
+        <field name="qty_available">50</field>
+        <field name="sequence">2</field>
+        <field name="category_id" ref="cat_coffee"/>
+    </record>
+    <record id="item_cappuccino" model="maghrib.cafe.item">
+        <field name="name">Cappuccino</field>
+        <field name="price_mad">30.0</field>
+        <field name="qty_available">40</field>
+        <field name="sequence">3</field>
+        <field name="category_id" ref="cat_coffee"/>
+    </record>
+    <record id="item_flat_white" model="maghrib.cafe.item">
+        <field name="name">Flat white</field>
+        <field name="price_mad">31.0</field>
+        <field name="qty_available">35</field>
+        <field name="sequence">4</field>
+        <field name="category_id" ref="cat_coffee"/>
+    </record>
+    <record id="item_iced_latte" model="maghrib.cafe.item">
+        <field name="name">Iced latte</field>
+        <field name="price_mad">34.0</field>
+        <field name="qty_available">35</field>
+        <field name="sequence">5</field>
+        <field name="category_id" ref="cat_coffee"/>
+    </record>
+
+    <!-- 03. Tea -->
+    <record id="item_atay_nana" model="maghrib.cafe.item">
+        <field name="name">Atay nana</field>
+        <field name="description">green tea, fresh mint</field>
+        <field name="price_mad">22.0</field>
+        <field name="qty_available">40</field>
+        <field name="sequence">1</field>
+        <field name="category_id" ref="cat_tea"/>
+    </record>
+    <record id="item_atay_chiba" model="maghrib.cafe.item">
+        <field name="name">Atay chiba</field>
+        <field name="description">seasonal absinthe</field>
+        <field name="price_mad">24.0</field>
+        <field name="qty_available">25</field>
+        <field name="sequence">2</field>
+        <field name="category_id" ref="cat_tea"/>
+    </record>
+    <record id="item_jasmine_green" model="maghrib.cafe.item">
+        <field name="name">Jasmine green</field>
+        <field name="price_mad">26.0</field>
+        <field name="qty_available">30</field>
+        <field name="sequence">3</field>
+        <field name="category_id" ref="cat_tea"/>
+    </record>
+    <record id="item_earl_grey" model="maghrib.cafe.item">
+        <field name="name">Earl Grey</field>
+        <field name="price_mad">26.0</field>
+        <field name="qty_available">30</field>
+        <field name="sequence">4</field>
+        <field name="category_id" ref="cat_tea"/>
+    </record>
+    <record id="item_herbal_selection" model="maghrib.cafe.item">
+        <field name="name">Herbal selection</field>
+        <field name="price_mad">25.0</field>
+        <field name="qty_available">30</field>
+        <field name="sequence">5</field>
+        <field name="category_id" ref="cat_tea"/>
+    </record>
+
+    <!-- 04. Matcha -->
+    <record id="item_matcha" model="maghrib.cafe.item">
+        <field name="name">Matcha</field>
+        <field name="description">hot or iced</field>
+        <field name="price_mad">32.0</field>
+        <field name="qty_available">25</field>
+        <field name="sequence">1</field>
+        <field name="category_id" ref="cat_matcha"/>
+    </record>
+    <record id="item_matcha_latte" model="maghrib.cafe.item">
+        <field name="name">Matcha latte</field>
+        <field name="price_mad">36.0</field>
+        <field name="qty_available">25</field>
+        <field name="sequence">2</field>
+        <field name="category_id" ref="cat_matcha"/>
+    </record>
+    <record id="item_iced_matcha_latte" model="maghrib.cafe.item">
+        <field name="name">Iced matcha latte</field>
+        <field name="price_mad">38.0</field>
+        <field name="qty_available">20</field>
+        <field name="sequence">3</field>
+        <field name="category_id" ref="cat_matcha"/>
+    </record>
+    <record id="item_strawberry_matcha" model="maghrib.cafe.item">
+        <field name="name">Strawberry matcha</field>
+        <field name="price_mad">42.0</field>
+        <field name="qty_available">0</field>
+        <field name="sequence">4</field>
+        <field name="category_id" ref="cat_matcha"/>
+    </record>
+
+    <!-- 05. Food -->
+    <record id="item_chicken_chermoula" model="maghrib.cafe.item">
+        <field name="name">Chicken chermoula toast</field>
+        <field name="description">herbs, preserved lemon</field>
+        <field name="price_mad">58.0</field>
+        <field name="qty_available">15</field>
+        <field name="sequence">1</field>
+        <field name="category_id" ref="cat_food"/>
+    </record>
+    <record id="item_roasted_veg_bowl" model="maghrib.cafe.item">
+        <field name="name">Roasted vegetable bowl</field>
+        <field name="description">grains, tahini, greens</field>
+        <field name="price_mad">62.0</field>
+        <field name="qty_available">15</field>
+        <field name="sequence">2</field>
+        <field name="category_id" ref="cat_food"/>
+    </record>
+    <record id="item_tomato_labneh" model="maghrib.cafe.item">
+        <field name="name">Tomato labneh flatbread</field>
+        <field name="price_mad">56.0</field>
+        <field name="qty_available">14</field>
+        <field name="sequence">3</field>
+        <field name="category_id" ref="cat_food"/>
+    </record>
+    <record id="item_harissa_tuna" model="maghrib.cafe.item">
+        <field name="name">Harissa tuna sandwich</field>
+        <field name="price_mad">54.0</field>
+        <field name="qty_available">16</field>
+        <field name="sequence">4</field>
+        <field name="category_id" ref="cat_food"/>
+    </record>
+
+    <!-- 06. Pastries -->
+    <record id="item_almond_croissant" model="maghrib.cafe.item">
+        <field name="name">Almond croissant</field>
+        <field name="price_mad">30.0</field>
+        <field name="qty_available">18</field>
+        <field name="sequence">1</field>
+        <field name="category_id" ref="cat_pastries"/>
+    </record>
+    <record id="item_orange_blossom_cake" model="maghrib.cafe.item">
+        <field name="name">Orange blossom cake</field>
+        <field name="price_mad">32.0</field>
+        <field name="qty_available">12</field>
+        <field name="sequence">2</field>
+        <field name="category_id" ref="cat_pastries"/>
+    </record>
+    <record id="item_date_tahini_cookie" model="maghrib.cafe.item">
+        <field name="name">Date tahini cookie</field>
+        <field name="price_mad">22.0</field>
+        <field name="qty_available">24</field>
+        <field name="sequence">3</field>
+        <field name="category_id" ref="cat_pastries"/>
+    </record>
+    <record id="item_daily_slice" model="maghrib.cafe.item">
+        <field name="name">Daily slice</field>
+        <field name="price_mad">30.0</field>
+        <field name="qty_available">10</field>
+        <field name="sequence">4</field>
+        <field name="category_id" ref="cat_pastries"/>
+    </record>
+</odoo>
